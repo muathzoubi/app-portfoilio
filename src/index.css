@@ -1,10 +1,28 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background: url('https://i.ibb.co/WWCtSQR/4148929.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+ width: 100%;
+
+  background: #000000;
+  --gap: 5em;
+  --line: 1px;
+  --color: rgba(255, 255, 255, 0.2);
+
+  background-image: linear-gradient(
+      -90deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    ),
+    linear-gradient(
+      0deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    );
+  background-size: var(--gap) var(--gap); 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -120,9 +138,10 @@ button:focus-visible {
 
 .btn {
   border: none;
-  width: 100px;
+  width: 150px;
   height: 35px;
-  background-color: rgba(233, 227, 227, 0.589);
+  background-color: rgba(233, 227, 227, 0.2);
+  border-color: rgba(233, 227, 227, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,7 +154,7 @@ button:focus-visible {
 }
 
 .btn:hover {
-  background-color: rgba(105, 13, 197, 0.5);
+  background-color: rgba(194, 188, 200, 0.5);
 }
 
 .card:hover::before {
@@ -152,7 +171,7 @@ button:focus-visible {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
   .grid-container {
     display: grid;
     row-gap: 20px;
@@ -161,11 +180,11 @@ button:focus-visible {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .grid-container {
     display: grid;
     row-gap: 20px;
-    column-gap: 20px;
+    column-gap: 10px;
     grid-template-columns: 1fr;
   }
 }
